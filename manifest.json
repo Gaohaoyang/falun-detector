@@ -22,5 +22,6 @@
   },
   "background": {
     "service_worker": "service-worker.js"
-  }
+  },
+  "permissions": ["tabs"]
 }

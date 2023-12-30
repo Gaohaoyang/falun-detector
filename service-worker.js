@@ -1,13 +1,9 @@
-chrome.tabs.onUpdated.addListener( (tabId, changeInfo, tab) => {
-  // read changeInfo data and do something with it
-  // like send the new url to contentscripts.js
-  console.log('tabId', tabId)
-  console.log('changeInfo', changeInfo)
-  console.log('tab', tab)
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === 'complete') {
-    console.log('changeInfo', changeInfo.url)
+    console.log('changeInfo', changeInfo, tab)
     chrome.tabs.sendMessage(tabId, {
       message: 'tabUpdatedSendFromFLDetector',
+      url: tab.url,
     })
   }
 })

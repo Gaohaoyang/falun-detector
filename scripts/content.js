@@ -7,17 +7,34 @@ const list = [
 
 /**
  * @description Detect text in list
+ * @param {String} url
  * @returns {String | undefined}
  */
-const detectTextInList = () => {
+const detectTextInList = (url) => {
   let foundText = undefined
+
+  const uploadInfoContent =
+    document.querySelector('#owner').textContent || document.querySelector('#owner').innerText
+
+  console.log('----uploadInfoContent----', uploadInfoContent)
+
   list.forEach((item) => {
-    const textContent = document.body.textContent || document.body.innerText
-    if (textContent.indexOf(item.name) > -1) { // todo
+    // check url
+    if (url.indexOf(item.name) > -1) {
       foundText = item.name
       return
     }
-    if (textContent.indexOf(item.youtubeName) > -1) { // todo
+    if (url.indexOf(item.youtubeName) > -1) {
+      foundText = item.youtubeName
+      return
+    }
+
+    // check uploader
+    if (uploadInfoContent.indexOf(item.name) > -1) {
+      foundText = item.name
+      return
+    }
+    if (uploadInfoContent.indexOf(item.youtubeName) > -1) {
       foundText = item.youtubeName
       return
     }
@@ -39,11 +56,23 @@ const renderTip = (foundText) => {
   } else {
     const html = `
       <div class="falun-detector-tip">
-        检测到页面包含 &nbsp;
-        <span class="falun-detector-tip-found-text">${foundText}</span>，请注意这个可能是FLG系相关的内容，请注意辨别。
+        <div>
+          检测到页面包含
+        </div>
+        <div class="falun-detector-tip-small">
+          Detected that the page contains
+        </div>
+        <span class="falun-detector-tip-found-text">${foundText}</span>
+        <div>
+          请注意可能是法沦功系相关的内容，请注意辨别。
+        </div>
+        <div class="falun-detector-tip-small">
+          Please note that it may be content related to the Falun Gong. Please discern accordingly.
+        </div>
+        <img class="falun-detector-tip-found-close" src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pics/xmark-solid.svg" alt="close" />
       </div>
     `
-    document.body.insertAdjacentHTML('beforebegin', html)
+    document.body.insertAdjacentHTML('afterbegin', html)
   }
 }
 
@@ -54,15 +83,12 @@ const hideTip = () => {
   }
 }
 
-const start = () => {
-  window.addEventListener('locationchange', () => {
-    console.log('location changed!')
-  })
-  window.addEventListener('popstate', (event) => {
-    // Code here for URL change
-    console.log('popstate')
-  })
-  const foundText = detectTextInList()
+/**
+ *
+ * @param {String} url
+ */
+const start = (url) => {
+  const foundText = detectTextInList(url)
   if (foundText) {
     console.log('foundText', foundText)
     renderTip(foundText)
@@ -70,6 +96,9 @@ const start = () => {
     console.log('not found')
     hideTip()
   }
+  document.querySelector('.falun-detector-tip-found-close').addEventListener('click', () => {
+    hideTip()
+  })
 }
 
 const init = () => {
@@ -77,7 +106,10 @@ const init = () => {
     // listen for messages sent from background.js
     if (request.message === 'tabUpdatedSendFromFLDetector') {
       console.log('tabUpdatedSendFromFLDetector')
-      start()
+      hideTip()
+      setTimeout(() => {
+        start(request.url)
+      }, 2000)
     }
   })
 }
