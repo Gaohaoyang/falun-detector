@@ -1,7 +1,7 @@
 .falun-detector-tip {
   width: 440px;
   height: auto;
-  background-color: rgba(255, 241, 118, 0.7);
+  background-color: rgba(255, 241, 118, 0.78);
   position: fixed;
   top: 80px;
   right: 80px;
@@ -17,7 +17,7 @@
   color: #263238;
   line-height: 1.5;
 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(4px);
 }
 
 .falun-detector-tip-found-text {
