@@ -32,6 +32,10 @@ const youTuberList = [
     linkKeywords: 'DayuShow',
   },
   {
+    name: '調查報告 大宇',
+    linkKeywords: 'dayureport',
+  },
+  {
     name: '江峰时刻',
     linkKeywords: 'JiangFengTimes',
   },
@@ -540,13 +544,14 @@ const init = () => {
     // listen for messages sent from background.js
     if (request.message === 'tabUpdatedSendFromFLDetector') {
       hideTip()
-      if (request.url.indexOf('youtube.com') > -1) {
+      const url = location.href
+      if (url.indexOf('youtube.com') > -1) {
         setTimeout(() => {
-          const foundText = detectTextInYoutubeList(request.url)
+          const foundText = detectTextInYoutubeList(url)
           processTip(foundText)
         }, 1800)
       } else {
-        const foundText = detectHostAndPathInList(request.url)
+        const foundText = detectHostAndPathInList(url)
         processTip(foundText)
       }
     }
