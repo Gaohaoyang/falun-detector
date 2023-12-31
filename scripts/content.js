@@ -398,6 +398,14 @@ const list = [
     name: '全球退党服务中心',
     linkKeywords: 'tuidang.org',
   },
+  {
+    name: 'falundafa',
+    linkKeywords: 'falundafa.org',
+  },
+  {
+    name: '九评共产党',
+    linkKeywords: 'ninecommentaries.com',
+  },
 ]
 
 const detectTextInYoutubeList = (url) => {
@@ -512,10 +520,8 @@ const hideTip = () => {
 
 const processTip = (foundText) => {
   if (foundText) {
-    console.log('foundText', foundText)
     renderTip(foundText)
   } else {
-    console.log('not found')
     hideTip()
   }
 
@@ -533,7 +539,6 @@ const init = () => {
   chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     // listen for messages sent from background.js
     if (request.message === 'tabUpdatedSendFromFLDetector') {
-      console.log('tabUpdatedSendFromFLDetector')
       hideTip()
       if (request.url.indexOf('youtube.com') > -1) {
         setTimeout(() => {

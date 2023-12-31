@@ -4,10 +4,10 @@
   "description": "Detect whether it is media or websites related to Falun Gong",
   "version": "1.0",
   "icons": {
-    "16": "images/icon-16.png",
-    "32": "images/icon-32.png",
-    "48": "images/icon-48.png",
-    "128": "images/icon-128.png"
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
   },
   "content_scripts": [
     {
@@ -17,8 +17,7 @@
     }
   ],
   "action": {
-    "default_popup": "popup/popup.html",
-    "default_icon": "images/falunDetector.png"
+    "default_icon": "images/icon16.png"
   },
   "background": {
     "service_worker": "service-worker.js"
