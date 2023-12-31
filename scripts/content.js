@@ -1,7 +1,7 @@
-const list = [
+const youTuberList = [
   {
-    name: '干净世界',
-    linkKeywords: 'ganjingworld',
+    name: '神韻藝術團中文官方頻道',
+    linkKeywords: 'ShenYunChinese',
   },
   {
     name: '新聞看點 李沐陽',
@@ -133,6 +133,157 @@ const list = [
   },
 ]
 
+const list = [
+  {
+    name: '新唐人电视台',
+    linkKeywords: 'ntdtv',
+  },
+  {
+    name: '爱博电视',
+    linkKeywords: 'starp2p.com',
+  },
+  {
+    name: '干净世界',
+    linkKeywords: 'ganjingworld',
+  },
+  {
+    name: 'Youmaker',
+    linkKeywords: 'youmaker',
+  },
+  {
+    name: '新世界影视',
+    linkKeywords: 'thenewcenturyfilms',
+  },
+  {
+    name: '大纪元',
+    linkKeywords: 'epochtimes',
+  },
+  {
+    name: '大纪元',
+    linkKeywords: 'china_epoch',
+  },
+  {
+    name: '大纪元',
+    linkKeywords: 'dajiyuan',
+  },
+  {
+    name: '希望之声',
+    linkKeywords: 'soundofhope',
+  },
+  {
+    name: 'New Century Films',
+    linkKeywords: 'NewCenturyFilms',
+  },
+  {
+    name: '希望之聲',
+    linkKeywords: 'SOH_TV',
+  },
+  {
+    name: '希望之聲',
+    linkKeywords: 'ozvoice',
+  },
+  {
+    name: '希望之聲',
+    linkKeywords: 'SOH-Cantonese',
+  },
+  {
+    name: '希望之聲',
+    linkKeywords: 'wanokokorosoh',
+  },
+  {
+    name: '人民报',
+    linkKeywords: 'renminbao',
+  },
+  {
+    name: '人民报',
+    linkKeywords: 'renmin.bao',
+  },
+  {
+    name: '看中国',
+    linkKeywords: 'secretchina',
+  },
+  {
+    name: '阿波罗网',
+    linkKeywords: 'aboluowang',
+  },
+  {
+    name: '禁闻网',
+    linkKeywords: 'bannedbook',
+  },
+  {
+    name: '动态网',
+    linkKeywords: 'dongtaiwang',
+  },
+  {
+    name: '无界浏览',
+    linkKeywords: 'wujieliulan',
+  },
+  {
+    name: '放光明电视',
+    linkKeywords: 'FGMTVorg',
+  },
+  {
+    name: '放光明电视',
+    linkKeywords: 'fgmtv',
+  },
+  {
+    name: '宇明网',
+    linkKeywords: 'yuming.qxbbs',
+  },
+  {
+    name: '中国事务',
+    linkKeywords: 'chinaaffairs',
+  },
+  {
+    name: '明慧网',
+    linkKeywords: 'minghui.org',
+  },
+  {
+    name: '正见网',
+    linkKeywords: 'zhengjian.org',
+  },
+  {
+    name: '亚太正悟网',
+    linkKeywords: 'zhengwunet.org',
+  },
+  {
+    name: '新生网',
+    linkKeywords: 'xinsheng.net',
+  },
+  {
+    name: '欧洲圆明网',
+    linkKeywords: 'gb.yuanming',
+  },
+  {
+    name: '澳洲光明网',
+    linkKeywords: 'guangming.org',
+  },
+  {
+    name: '神韵',
+    linkKeywords: 'shenyuncollections',
+  },
+  {
+    name: '神韵',
+    linkKeywords: 'shenyunperformingarts',
+  },
+  {
+    name: '神韵',
+    linkKeywords: 'zh-cn.shenyun',
+  },
+  {
+    name: 'Shen Yun Official Account',
+    linkKeywords: 'ShenYunTV',
+  },
+  {
+    name: '神韻藝術團中文官方頻道',
+    linkKeywords: 'ShenYunChinese',
+  },
+  {
+    name: '神韵',
+    linkKeywords: 'shenyuncreations.com',
+  },
+]
+
 /**
  * @description Detect text in list
  * @param {String} url
@@ -141,36 +292,52 @@ const list = [
 const detectTextInList = (url) => {
   let foundText = undefined
 
-  const uploadInfoContent =
+  if (url.indexOf('youtube.com') > -1) {
+    const ownerDom = document.querySelector('#owner')
     document.querySelector('#owner')?.textContent || document.querySelector('#owner')?.innerText
-  const uploadInfoContentATag = document.querySelector('#owner a')
-  console.log('----uploadInfoContent----', uploadInfoContent)
+    const uploadInfoContentATag = document.querySelector('#owner a')
+    youTuberList.forEach((item) => {
+      // check url
+      if (url.toLowerCase().indexOf(item.linkKeywords.toLowerCase()) > -1) {
+        foundText = item.name
+        return
+      }
 
-  list.forEach((item) => {
-    // check url
-    if (url.indexOf(item.name) > -1) {
-      foundText = item.name
-      return
-    }
-    if (url.indexOf(item.linkKeywords) > -1) {
-      foundText = item.name
-      return
-    }
+      // check uploader
+      if (
+        ownerDom &&
+        ownerDom.checkVisibility() &&
+        ownerDom?.textContent?.toLowerCase().indexOf(item.name.toLowerCase()) > -1
+      ) {
+        foundText = item.name
+        return
+      }
+      if (
+        ownerDom &&
+        ownerDom.checkVisibility() &&
+        ownerDom?.textContent?.toLowerCase().indexOf(item.linkKeywords.toLowerCase()) > -1
+      ) {
+        foundText = item.name
+        return
+      }
+      if (
+        uploadInfoContentATag &&
+        uploadInfoContentATag.checkVisibility() &&
+        uploadInfoContentATag.href?.toLowerCase().indexOf(item.linkKeywords) > -1
+      ) {
+        foundText = item.name
+        return
+      }
+    })
+  } else {
+    list.forEach((item) => {
+      if (url.toLowerCase().indexOf(item.name.toLowerCase()) > -1) {
+        foundText = item.name
+        return
+      }
+    })
+  }
 
-    // check uploader
-    if (uploadInfoContent && uploadInfoContent.indexOf(item.name) > -1) {
-      foundText = item.name
-      return
-    }
-    if (uploadInfoContent && uploadInfoContent.indexOf(item.linkKeywords) > -1) {
-      foundText = item.linkKeywords
-      return
-    }
-    if (uploadInfoContentATag && uploadInfoContentATag.href.indexOf(item.linkKeywords) > -1) {
-      foundText = item.linkKeywords
-      return
-    }
-  })
   return foundText
 }
 
@@ -196,7 +363,7 @@ const renderTip = (foundText) => {
         </div>
         <span class="falun-detector-tip-found-text">${foundText}</span>
         <div>
-          请注意可能是法沦功系相关的内容，请注意辨别。
+          请注意可能是法轮功系相关的内容，请注意辨别。
         </div>
         <div class="falun-detector-tip-small">
           Please note that it may be content related to the Falun Gong. Please discern accordingly.
