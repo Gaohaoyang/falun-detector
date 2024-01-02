@@ -87,11 +87,13 @@ If you find this project useful, you can buy me a cup of coffee :smile:
 
 Donation methods:
 
-- Github Sponsors https://github.com/sponsors/Gaohaoyang
-- Paypal https://www.paypal.com/paypalme/HaoyangGao
+- Github Sponsors
+  - https://github.com/sponsors/Gaohaoyang
+- Paypal
+  - https://www.paypal.com/paypalme/HaoyangGao
 - Wechat Pay
-  ![]('./assets/wechatPay.png')
+  <img src="./assets/wechatPay.png" width="240"/>
 - AliPay
-  ![]('./assets/alipay.png')
+   <img src="./assets/alipay.png" width="250"/>
 
 Enjoy it! :smile:
