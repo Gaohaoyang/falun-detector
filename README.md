@@ -6,7 +6,6 @@
   Falun Detector(FL 检测器)
 </h1>
 
-
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -17,9 +16,9 @@
 - [Additional information 补充说明](#additional-information-补充说明)
   - [Why this extension? 为什么做这个插件？](#why-this-extension-为什么做这个插件)
   - [Detection Logic 检测逻辑](#detection-logic-检测逻辑)
+- [Donation 捐赠](#donation-捐赠)
 
 <!-- /code_chunk_output -->
-
 
 ## Intro 简介
 
@@ -70,17 +69,29 @@ Thanks for Mr. Wang Zhian's YouTube videos.
 
 News media should strive to be as fair and objective as possible. However, it is evident that media affiliated with Falun Gong has not achieved this. In order to assist users in discerning, a Chrome extension has been developed specifically for this purpose.
 
-新闻媒体应该尽可能的公正客观，但是显然法轮功旗下的媒体没有做到这一点，为了帮助网友分辨，特意开发了这个Chrome插件。
+新闻媒体应该尽可能的公正客观，但是显然法轮功旗下的媒体没有做到这一点，为了帮助网友分辨，特意开发了这个 Chrome 插件。
 
 ### Detection Logic 检测逻辑
 
-- 对于 YouTube，检测url和up主名称是否包含关键词
+- 对于 YouTube，检测 url 和 up 主名称是否包含关键词
 
   For YouTube, check if the URL and the uploader's name contain keywords.
 
-- 对于其他网站，检测url和是否包含关键词
+- 对于其他网站，检测 url 和是否包含关键词
 
   For other websites, check if the URL contains keywords.
 
+## Donation 捐赠
+
+If you find this project useful, you can buy me a cup of coffee :smile:
+
+Donation methods:
+
+- Github Sponsors https://github.com/sponsors/Gaohaoyang
+- Paypal https://www.paypal.com/paypalme/HaoyangGao
+- Wechat Pay
+  ![]('./assets/wechatPay.png')
+- AliPay
+  ![]('./assets/alipay.png')
 
 Enjoy it! :smile:
