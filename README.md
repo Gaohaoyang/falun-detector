@@ -75,8 +75,11 @@ News media should strive to be as fair and objective as possible. However, it is
 ### Detection Logic 检测逻辑
 
 - 对于 YouTube，检测url和up主名称是否包含关键词
+
   For YouTube, check if the URL and the uploader's name contain keywords.
+
 - 对于其他网站，检测url和是否包含关键词
+
   For other websites, check if the URL contains keywords.
 
 
