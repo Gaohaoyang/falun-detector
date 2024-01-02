@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Falun Detector(FL检测器)",
   "description": "Detect whether it is media or websites related to Falun Gong",
-  "version": "1.0",
+  "version": "1.0.1",
   "icons": {
     "16": "images/icon16.png",
     "32": "images/icon32.png",
