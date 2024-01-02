@@ -92,8 +92,10 @@ Donation methods:
 - Paypal
   - https://www.paypal.com/paypalme/HaoyangGao
 - Wechat Pay
+
   <img src="./assets/wechatPay.png" width="240"/>
 - AliPay
-   <img src="./assets/alipay.png" width="250"/>
+
+  <img src="./assets/alipay.png" width="250"/>
 
 Enjoy it! :smile:
