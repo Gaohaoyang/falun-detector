@@ -183,6 +183,14 @@ const youTuberList = [
     name: '神韻藝術團中文官方頻道',
     linkKeywords: 'ShenYunChinese',
   },
+  {
+    name: '方偉時間',
+    linkKeywords: 'FangWeiTime',
+  },
+  {
+    name: 'Gan Jing World',
+    linkKeywords: 'ganjingworld-official',
+  },
 ]
 
 const list = [
