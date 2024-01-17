@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "法轮功(Falun)检测器",
+    "description": "Chrome 扩展的名称"
+  },
+  "extDescription": {
+    "message": "检测是否与法轮功相关的媒体或网站。",
+    "description": "Chrome 扩展的描述"
+  },
+  "detectTitle": {
+    "message": "检测到页面包含",
+    "description": "检测到页面包含"
+  },
+  "detectTitleResult": {
+    "message": "请注意可能是法轮功系相关的媒体或网页，请注意辨别。",
+    "description": "请注意可能是法轮功系相关的媒体或网页，请注意辨别。"
+  }
+}

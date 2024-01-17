@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "FalunGong Detector",
+    "description": "The name of the extension"
+  },
+  "extDescription": {
+    "message": "Detect whether it is media or a website related to Falun Gong.",
+    "description": "The description of the extension"
+  },
+  "detectTitle": {
+    "message": "Detected that the page contains",
+    "description": "Detected that the page contains"
+  },
+  "detectTitleResult": {
+    "message": "Please note that it may be media or web content related to the Falun Gong. Please discern accordingly.",
+    "description": "Please note that it may be media or web content related to the Falun Gong. Please discern accordingly."
+  }
+}

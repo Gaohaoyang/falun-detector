@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "파룬궁(Falun) 감지기",
+    "description": "확장 프로그램의 이름"
+  },
+  "extDescription": {
+    "message": "미디어 또는 웹사이트가 팔룬공과 관련이 있는지 여부를 감지합니다.",
+    "description": "확장 프로그램의 설명"
+  },
+  "detectTitle": {
+    "message": "페이지에 포함된 것을 감지했습니다",
+    "description": "페이지에 포함된 것을 감지했습니다"
+  },
+  "detectTitleResult": {
+    "message": "확인해 주세요. 이 페이지는 팔룬공과 관련된 미디어 또는 웹페이지일 수 있습니다. 식별에 주의하세요.",
+    "description": "확인해 주세요. 이 페이지는 팔룬공과 관련된 미디어 또는 웹페이지일 수 있습니다. 식별에 주의하세요."
+  }
+}

@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Falun Detector(FL检测器)",
-  "description": "Detect whether it is media or websites related to Falun Gong",
-  "version": "1.0.2",
+  "name": "__MSG_extName__",
+  "description": "__MSG_extDescription__",
+  "default_locale": "zh",
+  "version": "1.0.3",
   "icons": {
     "16": "images/icon16.png",
     "32": "images/icon32.png",

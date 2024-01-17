@@ -431,7 +431,7 @@ const detectTextInYoutubeList = (url) => {
   youTuberList.forEach((item) => {
     // check url
     if (urlPath.toLowerCase().indexOf(item.linkKeywords.toLowerCase()) > -1) {
-      foundText = item.name
+      foundText = item.linkKeywords
       return
     }
 
@@ -449,7 +449,7 @@ const detectTextInYoutubeList = (url) => {
       ownerDom.checkVisibility() &&
       ownerDom?.textContent?.toLowerCase().indexOf(item.linkKeywords.toLowerCase()) > -1
     ) {
-      foundText = item.name
+      foundText = item.linkKeywords
       return
     }
     if (
@@ -457,7 +457,7 @@ const detectTextInYoutubeList = (url) => {
       uploadInfoContentATag.checkVisibility() &&
       uploadInfoContentATag.href?.toLowerCase().indexOf(item.linkKeywords) > -1
     ) {
-      foundText = item.name
+      foundText = item.linkKeywords
       return
     }
   })
@@ -477,11 +477,11 @@ const detectHostAndPathInList = (url) => {
 
   list.forEach((item) => {
     if (urlHost.toLowerCase().indexOf(item.linkKeywords.toLowerCase()) > -1) {
-      foundText = item.name
+      foundText = item.linkKeywords
       return
     }
     if (urlPath.toLowerCase().indexOf(item.linkKeywords.toLowerCase()) > -1) {
-      foundText = item.name
+      foundText = item.linkKeywords
       return
     }
   })
@@ -504,17 +504,11 @@ const renderTip = (foundText) => {
     const html = `
       <div class="falun-detector-tip">
         <div>
-          检测到页面包含
-        </div>
-        <div class="falun-detector-tip-small">
-          Detected that the page contains
+          ${chrome.i18n.getMessage('detectTitle')}
         </div>
         <span class="falun-detector-tip-found-text">${foundText}</span>
         <div>
-          请注意可能是法轮功系相关的媒体或网页，请注意辨别。
-        </div>
-        <div class="falun-detector-tip-small">
-          Please note that it may be media or web content related to the Falun Gong. Please discern accordingly.
+          ${chrome.i18n.getMessage('detectTitleResult')}
         </div>
         <img class="falun-detector-tip-found-close" src="https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pics/xmark-solid.svg" alt="close" />
       </div>
