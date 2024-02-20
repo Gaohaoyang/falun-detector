@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "FalunGong Detektor",
+    "description": "Der Name der Erweiterung"
+  },
+  "extDescription": {
+    "message": "Erkennt, ob es sich um Medien oder eine Website im Zusammenhang mit Falun Gong handelt.",
+    "description": "Die Beschreibung der Erweiterung"
+  },
+  "detectTitle": {
+    "message": "Erkannt, dass die Seite enthält",
+    "description": "Erkannt, dass die Seite enthält"
+  },
+  "detectTitleResult": {
+    "message": "Bitte beachten Sie, dass es sich um Medien oder Webinhalte im Zusammenhang mit Falun Gong handeln könnte. Bitte entsprechend unterscheiden.",
+    "description": "Bitte beachten Sie, dass es sich um Medien oder Webinhalte im Zusammenhang mit Falun Gong handeln könnte. Bitte entsprechend unterscheiden."
+  }
+}
