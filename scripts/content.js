@@ -418,6 +418,10 @@ const list = [
     name: '九评共产党',
     linkKeywords: 'ninecommentaries.com',
   },
+  {
+    name: '文昭談古論今',
+    linkKeywords: '/wenzhaocomment',
+  },
 ]
 
 const detectTextInYoutubeList = (url) => {
